@@ -1,0 +1,43 @@
+#contenedorClima {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#caja1,
+#caja2,
+#caja3 {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+#temperatura-valor,
+#temperatura-descripcion {
+    margin: 5px;
+}
+
+#ubicacion {
+    margin: 10px 0;
+}
+
+#icono-animado {
+    margin: 10px auto;
+    display: block;
+}
+
+#viento-velocidad {
+    margin: 5px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}

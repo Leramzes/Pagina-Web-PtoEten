@@ -1,0 +1,538 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header{
+    background-color: #ffffff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  .cuerpo{
+    margin: 20px;
+  }
+  nav{
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    font-size: 18px;
+    
+  }
+  .navegacion {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    
+  }
+  
+  .navegacion ul {
+    list-style: none;
+  }
+  .menu{
+    margin-top: 20px;
+  }
+  .menu > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .menu li a {
+    position: relative; /* Necesario para posicionar el ícono */
+  }
+  .menu > li.has-submenu > a::before {
+    content: ""; /* Importante para que aparezca el ícono */
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #666666 transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+  .menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #666666;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .menu li a:hover {
+    color: #ee6b0d;
+    border-bottom: 2px solid #ee6b0d;
+  }
+  
+  .submenu {
+    position: absolute;
+    top: 100%; /* Mostrar el submenu debajo del elemento padre */
+    left: 0;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    display: table;
+    min-width: 200px;
+    min-height: 100px;
+    background-color: #ffffff;
+    transition: opacity 0.5s, transform 0.5s; /* Añadir transición para las transformaciones */
+    transform: translateY(10px) scaleY(0); /* Desplazar el submenu hacia abajo 10px y esconderlo (scaleY(0)) */
+    transform-origin: top; /* Cambiar el origen de transformación para evitar que se "hunda" el contenido */
+  }
+  
+  .submenu li a {
+    display: block;
+    color: #666666;
+    padding-top: 15px;
+    font-size: 19px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+  }
+  .submenu li a:hover{
+    border-bottom: none;
+  }
+  
+  .menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scaleY(1); /* Desplazar el submenu hacia arriba y mostrarlo (scaleY(1)) */
+  }
+  
+  .menu li .submenu {
+    transition: opacity 0.5s, transform 0.5s; /* Ajustar la transición */
+    opacity: 0;
+  }
+  .menu li.active > a {
+    border-bottom: 2px solid #ee6b0d;
+    color: #ee6b0d;
+  }
+  .menu-image {
+    max-height: 100px; 
+  }
+  #portal{
+    max-height: 80px; 
+    margin-top: 10px;
+  }
+
+  /* CARRUSEL PRINCIPAL DE IMAGENES*/
+  .carousel-container {
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 0;
+  }
+  #carouselExampleInterval {
+    position: relative;
+    z-index: 1;
+  }
+  .carousel-item img {
+    max-height: 480px; 
+    width: auto; /* Esto mantendrá la proporción de aspecto de la imagen */
+    border-radius: 5px;
+  }
+  .carousel-caption {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    width: 70%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 70px;
+    font-family: Impact ;
+    letter-spacing: 1px;
+  }
+
+
+  
+/* FOLLETO DE AUTORIDADES */
+.contenedor-autoridades{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.folletoAutoridades {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 35px;
+}
+.folletoAutoridades ul{
+  text-align: center;
+}
+
+.folletoAutoridades li {
+  display: inline-block;
+  margin-right: 20px; 
+}
+
+.folletoAutoridades li a {
+  text-decoration: none;
+  color: #ffffff; 
+  font-weight: 600;
+  font-size: 20px; 
+  background-color: #efb810;
+  padding: 20px 40px;
+  text-transform: uppercase;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-family: Roboto,sans-serif;
+}
+.folletoAutoridades li a.seleccionado {
+  background-color: #42d81c;
+}
+
+.folletoAutoridades li a:hover {
+  background-color: #42d81c;
+}
+.informacion-contenido{
+  margin-top: -40px;
+}
+
+/*contenedor de folletos*/
+.contenido {
+  margin: 20px;
+  height: 500px;
+  background: url(../multimedia/municiaplidad.jpg);
+  background-size: cover;
+}
+
+#contenido-regidor, #contenido-organo, #contenido-gerente {
+  overflow-y: hidden;
+  position: relative;
+  padding-right: 10px;
+}
+/* Mostrar el scroll solo cuando se hace hover */
+#contenido-regidor:hover,
+#contenido-organo:hover,
+#contenido-gerente:hover {
+  overflow-y: auto; /* Mostrar el scroll al hacer hover */
+}
+
+/* Estilo para el diseño del scroll */
+#contenido-regidor::-webkit-scrollbar,
+#contenido-organo::-webkit-scrollbar,
+#contenido-gerente::-webkit-scrollbar {
+  width: 8px; /* Ancho del scroll */
+}
+
+/* Estilo para el "pulgar" del scroll */
+#contenido-regidor::-webkit-scrollbar-thumb,
+#contenido-organo::-webkit-scrollbar-thumb,
+#contenido-gerente::-webkit-scrollbar-thumb {
+  background-color: #9e9d9d; /* Color del pulgar del scroll */
+  border-radius: 4px; /* Borde redondeado */
+}
+
+/* Estilo para el fondo del scroll */
+#contenido-regidor::-webkit-scrollbar-track,
+#contenido-organo::-webkit-scrollbar-track,
+#contenido-gerente::-webkit-scrollbar-track {
+  border-radius: 4px; /* Borde redondeado */
+}
+
+
+/* contendor de cards */
+.contenedor-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* cards de folletos */
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: .5s;
+  margin: 15px 20px;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px #204166;
+  transform: translateY(-15px);
+}
+
+.card .head {
+  height: 125px;
+  width: 100%;
+  position: relative;
+}
+
+.card .head .circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #3b7dc9;
+  bottom: 0;
+}
+
+.card .head .img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.card .head .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.card .description {
+  height: 200px;
+  padding: 40px 20px 20px 20px;
+  border-bottom: solid 1px #064a4c2e;
+  text-align: center;
+}
+.card .description h3 {
+  color: #204166;
+  font-size: 25px;
+}
+
+.card .description h4 {
+  color: #328bc7;
+  font-size: 20px;
+}
+
+.card .description p {
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: 'Baloo 2', cursive;
+}
+
+
+.card .contact {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .contact a {
+  text-decoration: none;
+  color: #fff;
+  background: #328bc7;
+  padding: 5px 20px;
+  border-radius: 5px;
+  transition: .3s;
+}
+
+.card .contact a:hover {
+  
+  background: #328bc7;
+ 
+}
+
+/* folleto para alcalde */
+.tarjeta {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+  margin: 40px;
+}
+
+.tarjeta .content {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;  
+  text-align: center;  
+  padding: 20px;
+  background: #fff;
+}
+
+.tarjeta .content .img {
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+.tarjeta .content .img img {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  margin-top: 15px;
+}
+
+.tarjeta .content span {
+  position: absolute;
+  width: 350px;
+  height: 200px;
+  background: linear-gradient(to right, #204166, #328bc7);
+  transform: rotate(-35deg);
+  top: -50px;
+  left: -100px;
+}
+
+#contenido-alcalde{
+  position: relative;
+  margin: 20px;
+}
+#contenido-alcalde .contenedor-cards{
+  min-height: 80vh;
+}
+.descripcion h5{
+  font-weight: 800;
+  color: #db1212;
+}
+.descripcion h2{
+  font-weight: 800;
+  color: #ffffff;
+}
+
+
+/* carrusel con swiper */
+  .swiper {
+    width: 100%;
+    height: 10%;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  #subtitulo{
+    margin-left: 30px;
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 1000;
+    color: #386f88;
+    margin-bottom: 10px;
+  }
+ 
+  
+
+
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+footer { width:100%; background-color:#2e4550; min-height:250px; padding:10px 0px 25px 0px ;}
+.pt2 { 
+  padding-top:40px ; 
+  margin-bottom:20px ;
+}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+.image-footer{
+  padding-top: 50px ; 
+  max-height: 250px; 
+}
+
+
+/* ESTILOS GENERALES */
+
+/* encabezados iniciales de los nav */
+.encabezadoCuerpo {
+  position: relative; /* Permite posicionar elementos secundarios con respecto a este contenedor */
+  overflow: hidden;
+}
+
+.encabezadoCuerpo img {
+  max-height: 200px; 
+  width: 100%; 
+  background-size: cover;
+  opacity: 0.3;
+  overflow: hidden;
+}
+
+.textos {
+  position: absolute; /* Posiciona el div de texto de manera absoluta sobre la imagen */
+  top: 55%; /* Mueve el div de texto hacia el centro vertical */
+  left: 50%; /* Mueve el div de texto hacia el centro horizontal */
+  transform: translate(-50%, -55%); /* Centra el div de texto perfectamente */
+  padding: 10px; /* Espacio interno alrededor del texto */
+  text-align: center; /* Alineación del texto en el centro */
+  
+}
+.textos p{
+  font-family: Impact ;
+  color: #3b7dc9;
+}
+.textos #text1{
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.textos #text2{
+  margin-top: -20px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
