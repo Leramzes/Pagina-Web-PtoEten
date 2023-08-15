@@ -1,22 +1,67 @@
+/* NAVBAR DE TURISMO */
+.navbarTurismo {
+    background-color: #79e23c;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente los elementos */
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin-bottom: -10px;
+}
+
+.navbarTurismo ul {
+    list-style: none;
+    display: flex; /* Mostrar la lista como flexbox */
+    margin: 10px;
+    padding: 0;
+}
+
+
+.navbarTurismo ul li a {
+    text-decoration: none;
+    padding: 10px 30px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
+.navbarTurismo ul li a:hover{
+    background-color: #fff;
+    color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+/* CONTENEDORES DEL CLIMA */
 #contenedorClima {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #f2f2f2;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #caja1,
 #caja2,
 #caja3 {
+    border-radius: 10px;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     flex: 1;
-    min-width: 200px;
+    width: 200px;
+    height: 180px;
+    margin: 30px;
+    color:azure;    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
+#caja1 {
+    background-color: rgba(0,0,0,0.767);
+}
+#caja2 {
+    background-color: darkslateblue;
+}
+#caja3 {
+    background-color: #2ab2ea;
+}
+
 
 #temperatura-valor,
 #temperatura-descripcion {
@@ -30,14 +75,16 @@
 #icono-animado {
     margin: 10px auto;
     display: block;
+    margin-top: -25px;
 }
 
 #viento-velocidad {
     margin: 5px;
-    font-size: 24px;
-    color: #007bff;
+    color: #ffffff;
 }
 
 h1, h2, h3 {
     margin: 0;
 }
+
+

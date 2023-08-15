@@ -92,11 +92,8 @@ window.addEventListener('load', ()=> {
 
   if(navigator.geolocation){
      navigator.geolocation.getCurrentPosition( posicion => {
-         //console.log(posicion.coords.latitude)
          lon = posicion.coords.longitude
          lat = posicion.coords.latitude
-          //ubicación actual    
-         //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${AQUI_VIENE_TU_API_KEY}`
 
          //ubicación por ciudad
          const url = `https://api.openweathermap.org/data/2.5/weather?q=Puerto Etén&lang=es&units=metric&appid=d11fefe3a1f816785b1807b25903cdd9`
@@ -106,24 +103,16 @@ window.addEventListener('load', ()=> {
          fetch(url)
           .then( response => { return response.json()})
           .then( async data => {
-              //console.log(data)
               
               let temp = Math.round(data.main.temp)
-              //console.log(temp)
               temperaturaValor.textContent = `${temp} ° C`
 
-              //console.log(data.weather[0].description)
               let desc = data.weather[0].description
               temperaturaDescripcion.textContent = desc.toUpperCase()
               ubicacion.textContent = data.name
               
               vientoVelocidad.textContent = `${data.wind.speed} m/s`
               
-              //para iconos estáticos
-              //const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`                     
-              //icono.src = urlIcon
-              //console.log(data.weather[0].icon)
-
               //para iconos dinámicos
               console.log(data.weather[0].main)
 
