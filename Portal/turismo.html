@@ -6,12 +6,10 @@
     <title>Muni Puerto Eten</title>
     <!-- ICONO DE PAGINA -->
     <link rel="shortcut icon" href="../multimedia/logoPNG.ico" type="image/x-icon">
-    <!-- LIBRERIA SWIPER -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- ARCHIVO CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/turismo.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <!-- LIBRERIA DE ICONOS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- JS -->
@@ -60,29 +58,47 @@
         <!-- NAVBAR DE TURISMO -->
         <nav class="navbarTurismo">
             <ul>
-                <li><a href="#">Turismo</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Festividades</a></li>
-                <li><a href="#">Gastronomía</a></li>
+                <li><a href="#" data-target="contenido-turismo" class="seleccionado">Turismo</a></li>
+                <li><a href="#" data-target="contenido-servicio">Servicios</a></li>
+                <li><a href="#" data-target="contenido-festividad">Festividades</a></li>
+                <li><a href="#" data-target="contenido-gastronomia">Gastronomía</a></li>
             </ul>
         </nav>
 
+        <div class="informacionNavBar">
+            <div class="info" id="contenido-turismo">
+                <!-- CLIMA Y TEMPERATURA -->
+                <div id="contenedorClima">
+                    <div id="caja1">
+                        <h1 id="temperatura-valor"></h1>
+                        <h1 id="temperatura-descripcion"></h1>
+                    </div>
+                    <div id="caja2">
+                        <h2 id="ubicacion"></h2>
+                        <img id="icono-animado" src="" alt="" height="128" width="128">
+                    </div>
+                    <div id="caja3">
+                        <h3>Veloc. del Viento</h3>
+                        <h1 id="viento-velocidad"></h1>
+                    </div>
+                </div>
+            </div>
 
-        <!-- CLIMA Y TEMPERATURA -->
-        <div id="contenedorClima">
-            <div id="caja1">
-                <h1 id="temperatura-valor"></h1>
-                <h1 id="temperatura-descripcion"></h1>
+            <div class="info" id="contenido-servicio">
+                <p>servicio</p>
             </div>
-            <div id="caja2">
-                <h2 id="ubicacion"></h2>
-                <img id="icono-animado" src="" alt="" height="128" width="128">
+
+            <div class="info" id="contenido-festividad">
+                <p>festividad</p>
             </div>
-            <div id="caja3">
-                <h3>Veloc. del Viento</h3>
-                <h1 id="viento-velocidad"></h1>
+
+            <div class="info" id="contenido-gastronomia">
+                <p>gastronomia</p>
             </div>
         </div>
+
+
+        
         
 
     </div>
@@ -155,10 +171,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <!-- JS PARA SWIPER -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   
     <!-- ACHIVO JS -->
-    <script src="../js/utility.js"></script>
+    <script src="../js/utilityPortal.js"></script>
     
 </body>
 </html>
