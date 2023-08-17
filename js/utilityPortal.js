@@ -44,28 +44,28 @@ window.addEventListener('load', ()=> {
   
                 switch (data.weather[0].main) {
                     case 'Thunderstorm':
-                      iconoAnimado.src='../animated/thunder.svg'
+                      iconoAnimado.src='/animated/thunder.svg'
                       break;
                     case 'Drizzle':
-                        now >=horaAnochecer ? iconoAnimado.src='../animated/rainy-5.svg' : iconoAnimado.src='../animated/rainy-2.svg';
+                        now >=horaAnochecer ? iconoAnimado.src='/animated/rainy-5.svg' : iconoAnimado.src='/animated/rainy-2.svg';
                       break;
                     case 'Rain':
-                        now >=horaAnochecer ? iconoAnimado.src='../animated/rainy-5.svg' : iconoAnimado.src='../animated/rainy-1.svg';
+                        now >=horaAnochecer ? iconoAnimado.src='/animated/rainy-5.svg' : iconoAnimado.src='/animated/rainy-1.svg';
                       break;
                     case 'Snow':
-                        now >=horaAnochecer ? iconoAnimado.src='../animated/snowy-5.svg' : iconoAnimado.src='../animated/snowy-1.svg';
+                        now >=horaAnochecer ? iconoAnimado.src='/animated/snowy-5.svg' : iconoAnimado.src='/animated/snowy-1.svg';
                       break;                        
                     case 'Clear':
-                        now >=horaAnochecer ? iconoAnimado.src='../animated/night.svg' : iconoAnimado.src='../animated/day.svg';
+                        now >=horaAnochecer ? iconoAnimado.src='/animated/night.svg' : iconoAnimado.src='/animated/day.svg';
                       break;
                     case 'Atmosphere':
-                        iconoAnimado.src='../animated/weather.svg'
+                        iconoAnimado.src='/animated/weather.svg'
                         break;  
                     case 'Clouds':
-                        now >=horaAnochecer ? iconoAnimado.src='../animated/cloudy-night-1.svg' : iconoAnimado.src='../animated/cloudy-day-1.svg';
+                        now >=horaAnochecer ? iconoAnimado.src='/animated/cloudy-night-1.svg' : iconoAnimado.src='/animated/cloudy-day-1.svg';
                         break;  
                     default:
-                        iconoAnimado.src='../animated/cloudy-day-1.svg'
+                        iconoAnimado.src='/animated/cloudy-day-1.svg'
                   }
   
             })
